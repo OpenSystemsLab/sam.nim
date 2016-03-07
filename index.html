@@ -1227,7 +1227,7 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 
   </div>
   <div class="nine columns" id="content">
-  <p class="module-desc"><p>Fast and just works JSON-Binding for Nim (requires <a class="reference external" href="https://github.com/OpenSystemsLab/jsmn.nim">Jsmn</a></p>
+  <p class="module-desc"><p>Fast and just works JSON-Binding for Nim (requires <a class="reference external" href="https://github.com/OpenSystemsLab/jsmn.nim">Jsmn</a>)</p>
 <p>This module is to celebrate 100 days old of Sam - my second princess</p>
 
 <h1><a class="toc-backref" id="installation" href="#installation">Installation</a></h1><pre class = "listing"><span class="Identifier">nimble</span> <span class="Identifier">install</span> <span class="Identifier">sam</span></pre></p>
@@ -1245,7 +1245,9 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
 </pre></dt>
 <dd>
 
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L38"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 
 </dl></div>
@@ -1256,70 +1258,96 @@ dt pre > span.Operator ~ span.Identifier, dt pre > span.Operator ~ span.Operator
             <span class="Identifier">json</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span></pre></dt>
 <dd>
 Deserialize a JSON string to a <cite>target</cite>
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L107"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="parse"><a name="parse,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">parse</span><span class="Other">(</span><span class="Identifier">json</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">JsmnNotEnoughJsonDataException</span><span class="Other">,</span>
     <span class="Identifier">JsmnBadTokenException</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Parse JSON string and returns a <cite>JsonNode</cite>
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L133"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="parse"><a name="parse,string,seq[JsmnToken],int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">parse</span><span class="Other">(</span><span class="Identifier">json</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">;</span> <span class="Identifier">tokens</span><span class="Other">:</span> <span class="Identifier">seq</span><span class="Other">[</span><span class="Identifier">JsmnToken</span><span class="Other">]</span><span class="Other">;</span> <span class="Identifier">numTokens</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Load a parsed JSON tokens and returns a <cite>JsonNode</cite>
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L143"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="[]"><a name="[],JsonNode,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">;</span> <span class="Identifier">key</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">,</span> <span class="Identifier">FieldError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Get a field from a json object, raises <cite>FieldError</cite> if field does not exists
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L175"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="[]"><a name="[],JsonNode,int"></a><pre><span class="Keyword">proc</span> <span class="Identifier">`[]`</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">;</span> <span class="Identifier">idx</span><span class="Other">:</span> <span class="Identifier">int</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">IndexError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Get a field from json array, raises <cite>IndexError</cite> if array is empty or index out of bounds
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L182"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="len"><a name="len,JsonNode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">len</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Returns the number of elements in a json array
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L199"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="hasKey"><a name="hasKey,JsonNode,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">hasKey</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">;</span> <span class="Identifier">key</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Checks if field exists in object
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L204"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="toStr"><a name="toStr,JsonNode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">toStr</span><span class="Other">(</span><span class="Identifier">node</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span> <span class="Other">{.</span><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieves the string value of a JSMN_STRING node
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L214"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="toInt"><a name="toInt,JsonNode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">toInt</span><span class="Other">(</span><span class="Identifier">node</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">int</span> <span class="Other">{.</span><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">OverflowError</span><span class="Other">,</span> <span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieves the int value of a JSMN_PRIMITIVE node
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L219"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="toFloat"><a name="toFloat,JsonNode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">toFloat</span><span class="Other">(</span><span class="Identifier">node</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">float</span> <span class="Other">{.</span><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">ValueError</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieves the float value of a JSMN_PRIMITIVE node
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L224"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="toBool"><a name="toBool,JsonNode"></a><pre><span class="Keyword">proc</span> <span class="Identifier">toBool</span><span class="Other">(</span><span class="Identifier">node</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">bool</span> <span class="Other">{.</span><span class="Identifier">inline</span><span class="Other">,</span> <span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Retrieves the bool value of a JSMN_PRIMITIVE node
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L229"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dumps"><a name="dumps,T,string"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dumps</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">;</span> <span class="Identifier">x</span><span class="Other">:</span> <span class="Keyword">var</span> <span class="Identifier">string</span><span class="Other">)</span></pre></dt>
 <dd>
 Serialize <cite>t</cite> into <cite>x</cite>
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L280"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="dumps"><a name="dumps,T"></a><pre><span class="Keyword">proc</span> <span class="Identifier">dumps</span><span class="Other">[</span><span class="Identifier">T</span><span class="Other">]</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">T</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">string</span></pre></dt>
 <dd>
 Serialize <cite>t</cite> to a JSON formatted string
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L323"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 
 </dl></div>
@@ -1329,13 +1357,17 @@ Serialize <cite>t</cite> to a JSON formatted string
 <dt id="items"><a name="items.i,JsonNode"></a><pre><span class="Keyword">iterator</span> <span class="Identifier">items</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">JsonNode</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">,</span> <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Iterator for the items of an array node
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L238"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="pairs"><a name="pairs.i,JsonNode"></a><pre><span class="Keyword">iterator</span> <span class="Identifier">pairs</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Keyword">tuple</span><span class="Other">[</span><span class="Identifier">key</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">,</span> <span class="Identifier">val</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">]</span> <span class="Other">{.</span><span class="Identifier">raises</span><span class="Other">:</span> <span class="Other">[</span><span class="Identifier">FieldError</span><span class="Other">]</span><span class="Other">,</span>
     <span class="Identifier">tags</span><span class="Other">:</span> <span class="Other">[</span><span class="Other">]</span><span class="Other">.}</span></pre></dt>
 <dd>
 Iterator for the child elements of an object node
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L256"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 
 </dl></div>
@@ -1345,12 +1377,16 @@ Iterator for the child elements of an object node
 <dt id="getValue"><a name="getValue.t,JsmnToken,string"></a><pre><span class="Keyword">template</span> <span class="Identifier">getValue</span><span class="Other">(</span><span class="Identifier">t</span><span class="Other">:</span> <span class="Identifier">JsmnToken</span><span class="Other">;</span> <span class="Identifier">json</span><span class="Other">:</span> <span class="Identifier">string</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">expr</span></pre></dt>
 <dd>
 Returns a string present of token <tt class="docutils literal"><span class="pre">t</span></tt>
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L42"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 <dt id="toObj"><a name="toObj.t,JsonNode"></a><pre><span class="Keyword">template</span> <span class="Identifier">toObj</span><span class="Other">(</span><span class="Identifier">n</span><span class="Other">:</span> <span class="Identifier">JsonNode</span><span class="Other">)</span><span class="Other">:</span> <span class="Identifier">auto</span></pre></dt>
 <dd>
 Map a JSMN_OBJECT node into a Nim object
-
+&nbsp;&nbsp;<a
+href="https://github.com/OpenSystemsLab/sam.nim/blob/master/sam.nim#L234"
+class="link-seesrc" target="_blank">Source</a>
 </dd>
 
 </dl></div>
@@ -1362,7 +1398,7 @@ Map a JSMN_OBJECT node into a Nim object
       <div class="twelve-columns footer">
         <span class="nim-sprite"></span>
         <br/>
-        <small>Made with Nim. Generated: 2016-03-07 13:39:26 UTC</small>
+        <small>Made with Nim. Generated: 2016-03-07 13:43:39 UTC</small>
       </div>
     </div>
   </div>
