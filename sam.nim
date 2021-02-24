@@ -84,9 +84,10 @@ proc loads(target: var any, m: Mapper, pos = 0) =
       loads(t, m, pos)
       target = some(t)
   elif target is ref:
-    if target == nil:
-      new(target)
-    loads(target[], m, pos)
+    if m.tokens[pos].getValue(m.json) != "null":
+      if target == nil:
+        new(target)
+      loads(target[], m, pos)
   elif target is object or target is tuple:
     when defined(verbose):
       debugEcho "object ", m.tokens[pos], " ", getValue(m.tokens[pos], m.json)
@@ -167,8 +168,6 @@ proc loads(target: var any, m: Mapper, pos = 0) =
       if $e == value:
         target = e
         break
-  elif target is ref:
-    loads(target[], m, pos)
   else:
     raise newException(KeyError, "unsupported type: " & $target.type)
 

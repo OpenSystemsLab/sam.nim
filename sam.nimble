@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.16"
+version       = "0.1.17"
 author        = "Huy Doan"
 description   = "Fast and just works JSON-Binding for Nim"
 license       = "MIT"
