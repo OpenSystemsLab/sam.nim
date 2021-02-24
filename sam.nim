@@ -74,7 +74,7 @@ proc findValue(m: Mapper, key: string, pos = 0): int {.noSideEffect.} =
       result = node.pos + 1
       break
 
-proc loads(target: var any, m: Mapper, pos = 0) =
+proc loads(target: var auto, m: Mapper, pos = 0) =
   if pos < 0: return
   when target is Option:
     if m.tokens[pos].getValue(m.json) == "null":
@@ -171,7 +171,7 @@ proc loads(target: var any, m: Mapper, pos = 0) =
   else:
     raise newException(KeyError, "unsupported type: " & $target.type)
 
-proc loads*(target: var any, json: string, bufferSize = 256) =
+proc loads*(target: var auto, json: string, bufferSize = 256) =
   var mapper = new(Mapper)
   mapper.tokens = jsmn.parseJson(json, bufferSize, autoResize=true)
   mapper.json = json
